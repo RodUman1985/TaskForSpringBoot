@@ -1,4 +1,4 @@
-package task.firstTaskForSpringBoot.dao;
+package task.firstTaskForSpringBoot.repository;
 
 import jakarta.persistence.EntityManager;
 import lombok.RequiredArgsConstructor;

@@ -1,4 +1,4 @@
-package task.firstTaskForSpringBoot.dao;
+package task.firstTaskForSpringBoot.repository;
 
 
 

@@ -3,8 +3,8 @@ package task.firstTaskForSpringBoot.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import task.firstTaskForSpringBoot.dao.UserDAO;
 import task.firstTaskForSpringBoot.model.User;
+import task.firstTaskForSpringBoot.repository.UserRepository;
 
 
 import java.util.List;
@@ -14,32 +14,32 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
 
-    private final UserDAO userDAO;
+    private final UserRepository userRepository;
 
 
 
     @Override
     @Transactional(readOnly = true)
     public List<User> findAll() {
-        return userDAO.findAll();
+        return userRepository.findAll();
     }
 
     @Override
     @Transactional(readOnly = true)
     public User findById(Long id) {
-        return userDAO.findById(id)
+        return userRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("User not found with id: " + id));
     }
 
     @Override
 
     public User save(User user) {
-        return userDAO.save(user);
+        return userRepository.save(user);
     }
 
     @Override
 
     public void deleteById(Long id) {
-        userDAO.deleteById(id);
+        userRepository.deleteById(id);
     }
 }
