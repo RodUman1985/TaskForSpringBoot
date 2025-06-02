@@ -2,10 +2,8 @@ package task.firstTaskForSpringBoot.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
-import lombok.*;
-import org.hibernate.proxy.HibernateProxy;
-
-import java.util.Objects;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "users")
